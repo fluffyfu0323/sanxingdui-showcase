@@ -596,8 +596,28 @@ body {
     background: linear-gradient(135deg, #1a1a3a, #2a2a5a, #1a1a4a);
 }
 
-.case-cover.hpjy {
-    background: linear-gradient(135deg, #2a2a2a, #3a3a3a, #2a2a2a);
+.case-cover.mhxy {
+    background: linear-gradient(135deg, #3a1a1a, #5a2a1a, #4a1a1a);
+}
+
+.case-cover.mhxy3d {
+    background: linear-gradient(135deg, #2a1a2a, #4a2a3a, #3a1a2a);
+}
+
+.case-cover.qqfc {
+    background: linear-gradient(135deg, #1a2a3a, #2a4a5a, #1a3a4a);
+}
+
+.case-cover.lswz {
+    background: linear-gradient(135deg, #2a2a1a, #4a3a1a, #3a2a1a);
+}
+
+.case-cover.yzr {
+    background: linear-gradient(135deg, #1a1a1a, #2a2a3a, #1a1a2a);
+}
+
+.case-cover.minecraft {
+    background: linear-gradient(135deg, #1a3a1a, #2a5a2a, #1a4a1a);
 }
 
 .case-game-icon {
