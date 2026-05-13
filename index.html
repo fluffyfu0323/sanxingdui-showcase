@@ -65,73 +65,213 @@
         <div class="carousel-container">
             <button class="carousel-btn carousel-prev" aria-label="上一个">‹</button>
             <div class="carousel-track">
-                <!-- Card 1 -->
-                <div class="artifact-card">
-                    <div class="card-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/20251026_Bronze_Mask_from_Sanxingdui_02.jpg" alt="青铜纵目面具" class="card-img">
-                        <div class="card-badge">镇馆之宝</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">青铜纵目面具</h3>
-                        <p class="card-desc">宽1.38米，高0.645米，眼睛呈柱状向外凸出约16厘米。造型极度夸张，具有强烈的神秘感与威仪感，被认为是古蜀人"千里眼、顺风耳"神话的物化表现。</p>
-                        <div class="card-meta">
-                            <span class="meta-tag">已被 <strong>3</strong> 款游戏引用</span>
+                <!-- Card 1: 青铜纵目面具 -->
+                <div class="artifact-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-image">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/20251026_Bronze_Mask_from_Sanxingdui_02.jpg/960px-20251026_Bronze_Mask_from_Sanxingdui_02.jpg" alt="青铜纵目面具" class="card-img">
+                                <div class="card-badge">镇馆之宝</div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">青铜纵目面具</h3>
+                                <p class="card-desc">宽1.38米，高0.645米，眼睛呈柱状向外凸出约16厘米。造型极度夸张，具有强烈的神秘感与威仪感，被认为是古蜀人"千里眼、顺风耳"神话的物化表现。</p>
+                                <div class="card-meta">
+                                    <span class="meta-tag">已被 <strong>3</strong> 款游戏引用</span>
+                                    <span class="flip-hint">点击查看联动案例 ↻</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-header">
+                                <span class="back-badge">游戏联动案例</span>
+                                <h3 class="back-title">青铜纵目面具</h3>
+                            </div>
+                            <div class="back-case">
+                                <div class="back-case-icon">👑</div>
+                                <div class="back-case-info">
+                                    <h4>王者荣耀 · 杨戬「纵目迁山」</h4>
+                                    <p>2025年十周年联动，杨戬传说皮肤以纵目面具为核心灵感，"纵目千里"的神话意象与杨戬天眼完美融合，青铜纹饰解构为技能特效图腾。</p>
+                                </div>
+                            </div>
+                            <div class="back-case">
+                                <div class="back-case-icon">⚡</div>
+                                <div class="back-case-info">
+                                    <h4>原神 · 钟离「古物见闻」</h4>
+                                    <p>2023年联动视频《仰观千秋，俯察万象》中，钟离以说书人身份讲解纵目面具的文化内涵，15种语言字幕传播全球。</p>
+                                </div>
+                            </div>
+                            <div class="back-case">
+                                <div class="back-case-icon">🗡️</div>
+                                <div class="back-case-info">
+                                    <h4>影之刃3 · 限定联动</h4>
+                                    <p>2021年三星堆新发掘后首个游戏联动，纵目面具在武侠动作游戏中以Boss形态重现，古蜀神秘感与战斗美学融合。</p>
+                                </div>
+                            </div>
+                            <div class="back-footer">
+                                <span class="flip-hint">点击翻回正面 ↻</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Card 2 -->
-                <div class="artifact-card">
-                    <div class="card-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Sanxingdui_Bronze_Tree_Piece_%289951198244%29.jpg" alt="青铜神树" class="card-img">
-                        <div class="card-badge">国宝</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">青铜神树</h3>
-                        <p class="card-desc">通高3.96米，是全世界已发现的最大单件青铜文物。由底座、树身和龙三部分组成，树分三层九枝，枝上立有神鸟，体现了古蜀人"通天神树"的宇宙观。</p>
-                        <div class="card-meta">
-                            <span class="meta-tag">已被 <strong>2</strong> 款游戏引用</span>
+                <!-- Card 2: 青铜神树 -->
+                <div class="artifact-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-image">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Bronze_Tree%2C_Sanxingdui_1a.jpg/960px-Bronze_Tree%2C_Sanxingdui_1a.jpg" alt="青铜神树" class="card-img">
+                                <div class="card-badge">国宝</div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">青铜神树</h3>
+                                <p class="card-desc">通高3.96米，是全世界已发现的最大单件青铜文物。由底座、树身和龙三部分组成，树分三层九枝，枝上立有神鸟，体现了古蜀人"通天神树"的宇宙观。</p>
+                                <div class="card-meta">
+                                    <span class="meta-tag">已被 <strong>2</strong> 款游戏引用</span>
+                                    <span class="flip-hint">点击查看联动案例 ↻</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-header">
+                                <span class="back-badge">游戏联动案例</span>
+                                <h3 class="back-title">青铜神树</h3>
+                            </div>
+                            <div class="back-case">
+                                <div class="back-case-icon">👑</div>
+                                <div class="back-case-info">
+                                    <h4>王者荣耀 · 后羿「神树通天」</h4>
+                                    <p>2025年十周年联动传说皮肤，以青铜神树为弓，神树枝干化为金色箭矢。三枝上立神鸟，随行走觉醒飞出，张艺谋担任艺术指导，首日销量突破580万份。</p>
+                                </div>
+                            </div>
+                            <div class="back-case">
+                                <div class="back-case-icon">🗡️</div>
+                                <div class="back-case-info">
+                                    <h4>影之刃3 · 青铜神树重现</h4>
+                                    <p>2021年联动中，青铜神树光辉在武侠世界重现，制作团队与三星堆博物馆合作拍摄短片，神树造型成为联动核心视觉。</p>
+                                </div>
+                            </div>
+                            <div class="back-footer">
+                                <span class="flip-hint">点击翻回正面 ↻</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Card 3 -->
-                <div class="artifact-card">
-                    <div class="card-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Bronze_Colossal_Standing_Figure%2C_Sanxingdui_a.jpg" alt="青铜大立人像" class="card-img">
-                        <div class="card-badge">六大国宝</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">青铜大立人像</h3>
-                        <p class="card-desc">通高2.62米，重约180公斤，是世界上现存最高大、最完整的青铜立人像。头戴花冠，身穿三层衣，双手呈环握状，被誉为"东方巨人""世界铜像之王"。</p>
-                        <div class="card-meta">
-                            <span class="meta-tag">已被 <strong>2</strong> 款游戏引用</span>
+                <!-- Card 3: 青铜大立人像 -->
+                <div class="artifact-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-image">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Bronze_Colossal_Standing_Figure%2C_Sanxingdui_a.jpg/960px-Bronze_Colossal_Standing_Figure%2C_Sanxingdui_a.jpg" alt="青铜大立人像" class="card-img">
+                                <div class="card-badge">六大国宝</div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">青铜大立人像</h3>
+                                <p class="card-desc">通高2.62米，重约180公斤，是世界上现存最高大、最完整的青铜立人像。头戴花冠，身穿三层衣，双手呈环握状，被誉为"东方巨人""世界铜像之王"。</p>
+                                <div class="card-meta">
+                                    <span class="meta-tag">已被 <strong>2</strong> 款游戏引用</span>
+                                    <span class="flip-hint">点击查看联动案例 ↻</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-header">
+                                <span class="back-badge">游戏联动案例</span>
+                                <h3 class="back-title">青铜大立人像</h3>
+                            </div>
+                            <div class="back-case">
+                                <div class="back-case-icon">🏎️</div>
+                                <div class="back-case-info">
+                                    <h4>QQ飞车 ·「梦回古蜀」赛道</h4>
+                                    <p>2021年"飞跃华夏"计划，美术团队实地考察三星堆，在赛道中精细还原青铜立人殿场景，玩家驾车穿梭于青铜大立人守护的古蜀世界。</p>
+                                </div>
+                            </div>
+                            <div class="back-case">
+                                <div class="back-case-icon">⛏️</div>
+                                <div class="back-case-info">
+                                    <h4>我的世界 · 1:1还原博物馆</h4>
+                                    <p>2020年联动中，方块风格重构青铜大立人像，玩家以学生身份游览三星堆博物馆，NPC讲解文物背景，开创三星堆游戏联动先河。</p>
+                                </div>
+                            </div>
+                            <div class="back-footer">
+                                <span class="flip-hint">点击翻回正面 ↻</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Card 4 -->
-                <div class="artifact-card">
-                    <div class="card-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Sanxingdui_Gold_Mask.jpg" alt="黄金面具" class="card-img">
-                        <div class="card-badge">重器</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">黄金面具</h3>
-                        <p class="card-desc">含金量约85%，宽约23厘米，高约28厘米，重约280克。面具眉眼镂空，造型威严庄重，是古蜀人权力与神性的象征，体现了极高的黄金加工工艺水平。</p>
-                        <div class="card-meta">
-                            <span class="meta-tag">已被 <strong>3</strong> 款游戏引用</span>
+                <!-- Card 4: 黄金面具 -->
+                <div class="artifact-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-image">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Sanxingdui_Gold_Mask.jpg/960px-Sanxingdui_Gold_Mask.jpg" alt="黄金面具" class="card-img">
+                                <div class="card-badge">重器</div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">黄金面具</h3>
+                                <p class="card-desc">含金量约85%，宽约23厘米，高约28厘米，重约280克。面具眉眼镂空，造型威严庄重，是古蜀人权力与神性的象征，体现了极高的黄金加工工艺水平。</p>
+                                <div class="card-meta">
+                                    <span class="meta-tag">已被 <strong>2</strong> 款游戏引用</span>
+                                    <span class="flip-hint">点击查看联动案例 ↻</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-header">
+                                <span class="back-badge">游戏联动案例</span>
+                                <h3 class="back-title">黄金面具</h3>
+                            </div>
+                            <div class="back-case">
+                                <div class="back-case-icon">👑</div>
+                                <div class="back-case-info">
+                                    <h4>王者荣耀 · 女娲「万灵启世」</h4>
+                                    <p>2025年十周年联动史诗皮肤，以黄金面具为面饰灵感，金光璀璨的神性设计彰显女娲造物之力，可通过活动免费获取。</p>
+                                </div>
+                            </div>
+                            <div class="back-case">
+                                <div class="back-case-icon">⚡</div>
+                                <div class="back-case-info">
+                                    <h4>原神 · 限定摆设「奇景铜像·悠古金面」</h4>
+                                    <p>2023年联动推出的游戏内限定家园摆设，以黄金面具为原型设计，全球玩家限时领取，领取率超90%。</p>
+                                </div>
+                            </div>
+                            <div class="back-footer">
+                                <span class="flip-hint">点击翻回正面 ↻</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Card 5 -->
-                <div class="artifact-card">
-                    <div class="card-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Sanxingdui_Gold_Scepter_%289950984395%29.jpg" alt="金杖" class="card-img">
-                        <div class="card-badge">权力象征</div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">金杖</h3>
-                        <p class="card-desc">全长1.42米，直径约2.3厘米，以金条捶打成金皮后包卷在木杖上。杖上刻有人头、鱼、鸟图案，是古蜀王国最高权力的象征，也是中国发现的同时期最大金器。</p>
-                        <div class="card-meta">
-                            <span class="meta-tag">已被 <strong>1</strong> 款游戏引用</span>
+                <!-- Card 5: 金杖 -->
+                <div class="artifact-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-image">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Sanxingdui_Gold_Scepter_%289950984395%29.jpg/960px-Sanxingdui_Gold_Scepter_%289950984395%29.jpg" alt="金杖" class="card-img">
+                                <div class="card-badge">权力象征</div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">金杖</h3>
+                                <p class="card-desc">全长1.42米，直径约2.3厘米，以金条捶打成金皮后包卷在木杖上。杖上刻有人头、鱼、鸟图案，是古蜀王国最高权力的象征，也是中国发现的同时期最大金器。</p>
+                                <div class="card-meta">
+                                    <span class="meta-tag">已被 <strong>1</strong> 款游戏引用</span>
+                                    <span class="flip-hint">点击查看联动案例 ↻</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-header">
+                                <span class="back-badge">游戏联动案例</span>
+                                <h3 class="back-title">金杖</h3>
+                            </div>
+                            <div class="back-case">
+                                <div class="back-case-icon">🏮</div>
+                                <div class="back-case-info">
+                                    <h4>梦幻西游 ·「寻梦古蜀」</h4>
+                                    <p>2023年联动活动中，金杖作为9种三星堆联动古玩道具之一，玩家使用考古铁铲挖掘获得。金杖的人头、鱼、鸟纹饰在游戏中精细复刻，成为庭院收藏珍品。</p>
+                                </div>
+                            </div>
+                            <div class="back-footer">
+                                <span class="flip-hint">点击翻回正面 ↻</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -145,14 +285,14 @@
     <section id="cases" class="section cases-section">
         <div class="section-header">
             <h2 class="section-title">游戏联动案例</h2>
-            <p class="section-desc">三星堆文化IP与顶级游戏的跨界碰撞 · 已累计 <strong>8</strong> 款游戏联动</p>
+            <p class="section-desc">三星堆文化IP与顶级游戏的跨界碰撞 · 已累计 <strong>7</strong> 款游戏联动</p>
         </div>
         <div class="cases-grid">
             <!-- Case 1: 王者荣耀 -->
             <div class="case-card featured">
                 <div class="case-header">
                     <div class="case-cover wzry">
-                        <div class="case-game-icon">👑</div>
+                        <img src="wangzhe.png" alt="王者荣耀 × 三星堆" class="case-cover-img">
                     </div>
                     <div class="case-tags">
                         <span class="tag tag-hot">🔥 现象级</span>
@@ -210,7 +350,7 @@
             <div class="case-card featured">
                 <div class="case-header">
                     <div class="case-cover genshin">
-                        <div class="case-game-icon">⚡</div>
+                        <img src="yuanshen.jpg" alt="原神 × 三星堆" class="case-cover-img">
                     </div>
                     <div class="case-tags">
                         <span class="tag tag-hot">🔥 破圈</span>
@@ -268,7 +408,7 @@
             <div class="case-card">
                 <div class="case-header">
                     <div class="case-cover mhxy">
-                        <div class="case-game-icon">🏮</div>
+                        <img src="menghuandiannao.jpg" alt="梦幻西游 × 三星堆" class="case-cover-img">
                     </div>
                     <div class="case-tags">
                         <span class="tag tag-classic">经典IP</span>
@@ -312,7 +452,7 @@
             <div class="case-card">
                 <div class="case-header">
                     <div class="case-cover mhxy3d">
-                        <div class="case-game-icon">🐉</div>
+                        <img src="menghuansanwei.jpeg" alt="梦幻西游三维版 × 三星堆" class="case-cover-img">
                     </div>
                     <div class="case-tags">
                         <span class="tag tag-classic">3D升级</span>
@@ -355,7 +495,7 @@
             <div class="case-card">
                 <div class="case-header">
                     <div class="case-cover qqfc">
-                        <div class="case-game-icon">🏎️</div>
+                        <img src="qqfeiche.webp" alt="QQ飞车 × 三星堆" class="case-cover-img">
                     </div>
                     <div class="case-tags">
                         <span class="tag tag-classic">文旅融合</span>
@@ -394,54 +534,12 @@
                 </div>
             </div>
 
-            <!-- Case 6: 乱世王者 -->
-            <div class="case-card">
-                <div class="case-header">
-                    <div class="case-cover lswz">
-                        <div class="case-game-icon">⚔️</div>
-                    </div>
-                    <div class="case-tags">
-                        <span class="tag tag-classic">战略联动</span>
-                        <span class="tag tag-new">2021</span>
-                    </div>
-                </div>
-                <div class="case-body">
-                    <h3 class="case-title">乱世王者 × 三星堆博物馆</h3>
-                    <p class="case-time">2021年 · 腾讯 · SLG · 天美工作室群合作</p>
-                    
-                    <div class="case-detail">
-                        <h4>联动内容</h4>
-                        <ul>
-                            <li>三星堆主题游戏版本，青铜文明元素融入SLG策略玩法</li>
-                            <li>IP授权定制内容，三星堆文物纹饰装饰与限定道具</li>
-                            <li>与王者荣耀、QQ飞车同期官宣，腾讯天美多游戏矩阵联动</li>
-                        </ul>
-                    </div>
 
-                    <div class="case-metrics">
-                        <div class="metric">
-                            <div class="metric-icon">📈</div>
-                            <div class="metric-info">
-                                <span class="metric-label">社区热度</span>
-                                <span class="metric-value">多游戏矩阵联动，IP影响力倍增</span>
-                            </div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-icon">👥</div>
-                            <div class="metric-info">
-                                <span class="metric-label">用户反馈</span>
-                                <span class="metric-value">SLG策略玩家对历史文化联动接受度高</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Case 7: 影之刃3 -->
+            <!-- Case 6: 影之刃3 -->
             <div class="case-card">
                 <div class="case-header">
                     <div class="case-cover yzr">
-                        <div class="case-game-icon">🗡️</div>
+                        <img src="yingzhiren.jpg" alt="影之刃3 × 三星堆" class="case-cover-img">
                     </div>
                     <div class="case-tags">
                         <span class="tag tag-hot">首次联动</span>
@@ -485,7 +583,7 @@
             <div class="case-card">
                 <div class="case-header">
                     <div class="case-cover minecraft">
-                        <div class="case-game-icon">⛏️</div>
+                        <img src="wodeshijie.png" alt="我的世界 × 三星堆" class="case-cover-img">
                     </div>
                     <div class="case-tags">
                         <span class="tag tag-classic">寓教于乐</span>

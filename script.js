@@ -72,7 +72,7 @@ function initCarousel() {
 /* === Scroll Reveal Animation === */
 function initScrollReveal() {
     const revealElements = document.querySelectorAll(
-        '.artifact-card, .case-card, .insight-card, .section-header'
+        '.case-card, .insight-card, .section-header'
     );
 
     revealElements.forEach(el => el.classList.add('reveal'));
