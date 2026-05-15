@@ -302,6 +302,14 @@ body {
     box-shadow: 0 0 20px rgba(212, 168, 67, 0.3), 0 0 40px rgba(212, 168, 67, 0.1);
 }
 
+.mid-cta-section {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    background: var(--color-bg);
+}
+
 .hero-scroll-hint {
     position: absolute;
     bottom: 2rem;
@@ -373,6 +381,7 @@ body {
 /* === Artifacts Carousel === */
 .artifacts-section {
     position: relative;
+    padding-bottom: 2rem;
 }
 
 .carousel-container {
