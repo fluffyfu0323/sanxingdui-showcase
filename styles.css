@@ -621,17 +621,25 @@ body {
 }
 
 .card-title-row {
-    display: flex;
+    display: flex !important;
+    flex-direction: row !important;
     align-items: center;
     gap: 0.6rem;
     margin-bottom: 0.6rem;
+    flex-wrap: nowrap;
+}
+
+.card-title-row .card-title {
+    margin-bottom: 0;
+    flex: 1;
+    min-width: 0;
 }
 
 .card-title {
     font-family: var(--font-title);
     font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 0;
+    margin-bottom: 0.6rem;
     color: var(--color-text);
 }
 
@@ -650,12 +658,13 @@ body {
     background: rgba(212, 168, 67, 0.1);
     border: 1px solid rgba(212, 168, 67, 0.4);
     border-radius: 14px;
-    text-decoration: none;
+    text-decoration: none !important;
     white-space: nowrap;
     flex-shrink: 0;
     transition: all 0.25s ease;
     letter-spacing: 0.02em;
     cursor: pointer;
+    line-height: 1.6;
 }
 
 .btn-view-3d:hover {
