@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D 文物展示 — 三星堆</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- model-viewer -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #2D6A4F;
+            --color-primary-light: #40916C;
+            --color-accent: #D4A843;
+            --color-accent-light: #E8C86A;
+            --color-bg-dark: #1A1A2E;
+            --color-bg-deep: #16213E;
+            --color-bg-card: #1E2A3A;
+            --color-text: #EAEAEA;
+            --color-text-muted: #A0A8B4;
+            --color-border: rgba(212, 168, 67, 0.2);
+            --font-title: 'Noto Serif SC', serif;
+            --font-body: 'Noto Sans SC', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(135deg, var(--color-bg-dark), var(--color-bg-deep));
+            color: var(--color-text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .viewer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .viewer-header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-accent);
+            background: rgba(212, 168, 67, 0.1);
+            border: 1px solid rgba(212, 168, 67, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(212, 168, 67, 0.2);
+            border-color: var(--color-accent);
+        }
+
+        .viewer-title {
+            font-family: var(--font-title);
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--color-text), var(--color-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Main content */
+        .viewer-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            gap: 1.5rem;
+        }
+
+        .model-container {
+            width: 100%;
+            max-width: 900px;
+            height: 65vh;
+            min-height: 400px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            box-shadow: 0 0 60px rgba(212, 168, 67, 0.08), 0 8px 32px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        model-viewer {
+            width: 100%;
+            height: 100%;
+            --poster-color: transparent;
+            --progress-bar-color: var(--color-accent);
+            --progress-bar-height: 3px;
+        }
+
+        /* Info panel */
+        .artifact-info {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.5rem 2rem;
+            background: var(--color-bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+        }
+
+        .artifact-info-text h2 {
+            font-family: var(--font-title);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: var(--color-text);
+        }
+
+        .artifact-info-text p {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+        }
+
+        .interaction-hints {
+            display: flex;
+            gap: 1.5rem;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        .hint-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+        }
+
+        .hint-icon {
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+
+        /* Loading overlay */
+        .loading-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(ellipse at center, #1e2a3a 0%, #1a1a2e 100%);
+            z-index: 10;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 48px;
+            height: 48px;
+            border: 3px solid rgba(212, 168, 67, 0.2);
+            border-top-color: var(--color-accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .viewer-header {
+                padding: 0.8rem 1rem;
+            }
+
+            .viewer-title {
+                font-size: 1rem;
+            }
+
+            .viewer-main {
+                padding: 1rem;
+            }
+
+            .model-container {
+                height: 50vh;
+                min-height: 300px;
+                border-radius: 12px;
+            }
+
+            .artifact-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+                padding: 1.2rem;
+            }
+
+            .interaction-hints {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="viewer-header">
+        <div class="viewer-header-left">
+            <a href="index.html" class="back-btn">← 返回展览</a>
+            <h1 class="viewer-title" id="page-title">3D 文物展示</h1>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="viewer-main">
+        <div class="model-container">
+            <div class="loading-overlay" id="loading-overlay">
+                <div class="loading-spinner"></div>
+                <span class="loading-text">正在加载 3D 模型…</span>
+            </div>
+            <model-viewer
+                id="model-viewer"
+                alt="三星堆文物 3D 模型"
+                camera-controls
+                auto-rotate
+                auto-rotate-delay="800"
+                rotation-per-second="30deg"
+                shadow-intensity="1.2"
+                shadow-softness="0.8"
+                environment-image="neutral"
+                exposure="1.0"
+                camera-orbit="30deg 75deg auto"
+                min-camera-orbit="auto auto auto"
+                max-camera-orbit="auto auto auto"
+                interaction-prompt="auto"
+                interaction-prompt-threshold="3000"
+                style="background: radial-gradient(ellipse at center, #2a2a4a 0%, #1a1a2e 100%);"
+            >
+            </model-viewer>
+        </div>
+
+        <div class="artifact-info">
+            <div class="artifact-info-text">
+                <h2 id="artifact-name">青铜大立人像</h2>
+                <p id="artifact-desc">通高2.62米，重约180公斤，是世界上现存最高大、最完整的青铜立人像。被誉为"东方巨人""世界铜像之王"。</p>
+            </div>
+            <div class="interaction-hints">
+                <div class="hint-item">
+                    <span class="hint-icon">🖱️</span>
+                    <span>拖动旋转</span>
+                </div>
+                <div class="hint-item">
+                    <span class="hint-icon">🔍</span>
+                    <span>滚轮缩放</span>
+                </div>
+                <div class="hint-item">
+                    <span class="hint-icon">✋</span>
+                    <span>右键平移</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 文物模型配置
+        const artifactModels = {
+            'sanxingdui-qingtongrenxiang': {
+                name: '青铜大立人像',
+                file: 'sanxingdui-qingtongrenxiang.glb',
+                desc: '通高2.62米，重约180公斤，是世界上现存最高大、最完整的青铜立人像。头戴花冠，身穿三层衣，双手呈环握状，被誉为"东方巨人""世界铜像之王"。'
+            },
+            'sanxingdui-qingtongshenshu': {
+                name: '青铜神树',
+                file: 'sanxingdui-qingtongshenshu.glb',
+                desc: '通高3.96米，是全世界已发现的最大单件青铜文物。由底座、树身和龙三部分组成，树分三层九枝，枝上立有神鸟，体现了古蜀人"通天神树"的宇宙观。'
+            },
+            'sanxingdui-qingtongzongmumianju': {
+                name: '青铜纵目面具',
+                file: 'sanxingdui-qingtongzongmumianju.glb',
+                desc: '宽1.38米，高0.645米，眼睛呈柱状向外凸出约16厘米。造型极度夸张，具有强烈的神秘感与威仪感，被认为是古蜀人"千里眼、顺风耳"神话的物化表现。'
+            }
+        };
+
+        // 从 URL 参数获取模型 ID
+        const params = new URLSearchParams(window.location.search);
+        const modelId = params.get('model') || 'sanxingdui-qingtongrenxiang';
+        const artifact = artifactModels[modelId];
+
+        if (artifact) {
+            // 设置页面信息
+            document.getElementById('page-title').textContent = artifact.name + ' · 3D 展示';
+            document.getElementById('artifact-name').textContent = artifact.name;
+            document.getElementById('artifact-desc').textContent = artifact.desc;
+            document.title = artifact.name + ' — 3D 文物展示 — 三星堆';
+
+            // 加载模型
+            const viewer = document.getElementById('model-viewer');
+            viewer.setAttribute('src', artifact.file);
+            viewer.setAttribute('alt', artifact.name + ' 3D 模型');
+
+            // 监听加载完成，隐藏 loading
+            viewer.addEventListener('load', () => {
+                document.getElementById('loading-overlay').classList.add('hidden');
+            });
+        } else {
+            document.getElementById('loading-overlay').innerHTML =
+                '<span class="loading-text" style="color: #E8C86A;">未找到该文物的 3D 模型</span>';
+        }
+    </script>
+</body>
+</html>

@@ -620,12 +620,49 @@ body {
     padding: 1.5rem;
 }
 
+.card-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+
 .card-title {
     font-family: var(--font-title);
     font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0;
     color: var(--color-text);
+}
+
+.card-title-row + .card-desc {
+    /* 保持原有间距 */
+}
+
+.btn-view-3d {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.2rem 0.65rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    background: rgba(212, 168, 67, 0.1);
+    border: 1px solid rgba(212, 168, 67, 0.4);
+    border-radius: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.25s ease;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+}
+
+.btn-view-3d:hover {
+    background: rgba(212, 168, 67, 0.25);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 12px rgba(212, 168, 67, 0.25);
+    transform: scale(1.05);
 }
 
 .card-desc {
